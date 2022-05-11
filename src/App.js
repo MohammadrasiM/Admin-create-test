@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Routes from "./Routes/Routes"
+import React,{useEffect} from 'react'
+import { useNavigate,useLocation } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 function App() {
+  const navigate=useNavigate()
+  const location=useLocation()
+useEffect(()=>{
+console.log(location,'useLocation')
+if(localStorage.getItem('token')){
+
+  navigate(`${location.pathname=='/'?'/dashboard':location.pathname}`)
+}else{ navigate("/") }
+
+
+},[])
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Routes/>
+    <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
     </div>
   );
 }
