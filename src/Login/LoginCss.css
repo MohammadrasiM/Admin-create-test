@@ -1,6 +1,8 @@
-.former{    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 86%;
-    width: 100%;
-    position: absolute;}
+.former {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86%;
+  width: 100%;
+  position: absolute;
+}
