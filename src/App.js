@@ -19,7 +19,10 @@ function App() {
     }
   }, []);
 
-  let links = [{ name: "dashboard", path: "dashboard" }];
+  let links = [
+    { name: "dashboard", path: "dashboard" },
+    { name: "Admin panel", path: "create" },
+  ];
 
   return (
     <div className="App">
@@ -31,7 +34,11 @@ function App() {
               theme="dark"
               mode="horizontal"
               selectedKeys={
-                location.pathname === "/dashboard" ? "dashboard" : null
+                location.pathname === "/dashboard"
+                  ? "dashboard"
+                  : location.pathname == "/create"
+                  ? "Admin panel"
+                  : null
               }
             >
               {" "}
@@ -48,9 +55,7 @@ function App() {
           <Content style={{ padding: "0 50px" }}>
             <Routes />
           </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Smrm's test project for Gardesh Pay
-          </Footer>
+          <Footer style={{ textAlign: "center" }}>Smrm's test project</Footer>
         </Layout>
       ) : (
         <LoginRoute />

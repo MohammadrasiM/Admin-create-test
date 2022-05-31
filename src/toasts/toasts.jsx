@@ -13,8 +13,30 @@ export function warningNotify() {
     }
   );
 }
+export function warning(x) {
+  toast.warn(`${x}`, {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+}
 export function SuccessNotify(name) {
   toast.success(`Welcome ${name}`, {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+}
+export function Success(name) {
+  toast.success(`${name}`, {
     position: "bottom-right",
     autoClose: 5000,
     hideProgressBar: false,
